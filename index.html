@@ -53,21 +53,21 @@
             document.getElementById('website-url').textContent = url;
         }
 
-        function spamAlerts() {
+        function spamConsole() {
             let count = 0;
             const interval = setInterval(() => {
                 if (count >= 100) {
                     clearInterval(interval);
                     return;
                 }
-                alert("To jest tylko strona vector do przeglądarki. Możliwe informacje to nieprawda.");
+                console.log("To jest tylko strona vector do przeglądarki. Możliwe informacje to nieprawda.");
                 count++;
             }, 300);
         }
 
         window.onload = function() {
             setWebsiteURL();
-            setTimeout(spamAlerts, 30000); // Start spamming after 30 seconds
+            setTimeout(spamConsole, 30000); // Start spamming after 30 seconds
         };
     </script>
 </head>
@@ -82,7 +82,7 @@
         <div class="main-message">Ta witryna została zgłoszona jako niebezpieczna</div>
         <div class="hosted-by">Hostowane przez <span id="website-url">[adres witryny]</span></div>
         <div class="description">
-            Zalecamy przerwanie przeglądania tej witryny. Została ona zgłoszona do jako wyłudzająca i może próbować wykraść informacje osobiste lub finansowe lub być wirusem.
+            Firma Microsoft zaleca przerwanie przeglądania tej witryny. Została ona zgłoszona do firmy Microsoft jako wyłudzająca i może próbować wykraść informacje osobiste lub finansowe.
         </div>
     </div>
 </body>
