@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niebezpieczna Witryna</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ff4c4c;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .warning-icon {
+            margin-bottom: 20px;
+        }
+
+        .main-message {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .hosted-by {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 1rem auto;
+            font-size: 1rem;
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+            fill: white;
+        }
+    </style>
+    <script>
+        function setWebsiteURL() {
+            const url = window.location.hostname;
+            document.getElementById('website-url').textContent = url;
+        }
+        window.onload = setWebsiteURL;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="warning-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path>
+                <path d="M11 7h2v6h-2zm0 8h2v2h-2z"></path>
+            </svg>
+        </div>
+        <div class="main-message">Ta witryna została zgłoszona jako niebezpieczna</div>
+        <div class="hosted-by">Hostowane przez <span id="website-url">[adres witryny]</span></div>
+        <div class="description">
+            Firma Microsoft zaleca przerwanie przeglądania tej witryny. Została ona zgłoszona do firmy Microsoft jako wyłudzająca i może próbować wykraść informacje osobiste lub finansowe.
+        </div>
+    </div>
+</body>
+</html>
